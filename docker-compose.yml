@@ -1,0 +1,40 @@
+version: "3.7"
+services:
+  pgadmin:
+    image: dpage/pgadmin4
+    init: true
+    container_name: pgadmin4
+    restart: always
+#    tutaj są gdzieś jeszcze jakieś backupy ale tego nie kminie ATM
+#    volumes:
+#      - ./pgadmin-backup/backup.tar:/pgadmin4/backup.tar
+    environment:
+      PGADMIN_DEFAULT_EMAIL: test@test.pl
+      PGADMIN_DEFAULT_PASSWORD: test
+    ports:
+      - "2137:80"
+    depends_on:
+      - postgres1
+      - postgres2
+  postgres1:
+    image: postgres
+    init: true
+    container_name: postgres1
+    restart: always
+    volumes:
+      - ./postgres1-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+  postgres2:
+    image: postgres
+    init: true
+    container_name: postgres2
+    restart: always
+    volumes:
+      - ./postgres2-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
