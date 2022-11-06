@@ -12,7 +12,7 @@ services:
       PGADMIN_DEFAULT_EMAIL: test@test.pl
       PGADMIN_DEFAULT_PASSWORD: test
     ports:
-      - "2137:80"
+      - "80:80"
     depends_on:
       - postgres1
       - postgres2
