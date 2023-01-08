@@ -1,17 +1,17 @@
 version: "3.7"
 services:
-  pgadmin:
-    image: dpage/pgadmin4
-    init: true
-    container_name: pgadmin4
-    restart: always
-    environment:
-      PGADMIN_DEFAULT_EMAIL: test@test.pl
-      PGADMIN_DEFAULT_PASSWORD: test
-    ports:
-      - "80:80"
-    depends_on:
-      - postgres
+#   pgadmin:
+#     image: dpage/pgadmin4
+#     init: true
+#     container_name: pgadmin4
+#     restart: always
+#     environment:
+#       PGADMIN_DEFAULT_EMAIL: test@test.pl
+#       PGADMIN_DEFAULT_PASSWORD: test
+#     ports:
+#       - "80:80"
+#     depends_on:
+#       - postgres
   postgres:
     image: postgres
     init: true
@@ -19,7 +19,7 @@ services:
     restart: always
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
-      - ./lab07:/home
+      - ./lab08:/home
     ports:
       - "5432:5432"
     environment:

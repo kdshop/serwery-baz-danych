@@ -27,6 +27,7 @@ then
     echo $licznik>licznik.tmp
     pg_dump -U postgres -d french -f "kopia1.dump"
   fi
+
 else
   mkdir backup
 fi
