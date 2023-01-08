@@ -19,7 +19,7 @@ services:
     restart: always
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
-      - ./postgres-work:/home
+      - ./lab07:/home
     ports:
       - "5432:5432"
     environment:
