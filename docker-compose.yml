@@ -19,7 +19,7 @@ services:
     restart: always
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
-      - ./lab08:/home
+      - ./kolokwium:/home
     ports:
       - "5432:5432"
     environment:
