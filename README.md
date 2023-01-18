@@ -93,3 +93,25 @@ GRANT SELECT, INSERT, UPDATE ON ALL TABLES IN SCHEMA schema1 TO rola1;
 GRANT USAGE ON ALL SEQUENCES IN SCHEMA schema1 TO rola1;
 SELECT grantee, table_schema, table_name, privilege_type FROM information_schema.table_privileges WHERE table_schema='schema1';
 ```
+
+```shell
+n=3
+for i in $(seq $n)
+do
+    read -p "podaj element tablicy" element
+    tab=(${tab[@]} $element)
+done
+
+for i in ${tab[*]}
+do
+  echo $i
+done 
+
+echo ${tab[@]}
+```
+
+```shell
+cat lorem-ipsum.txt | tr "a" "+" # zamiana a na *
+cat lorem-ipsum.txt | tr -d "a" # wykasowanie a z inputu
+wc lorem-ipsum.txt # ilosc linii, ilosc slow, rozmiar w B, nazwa pliku
+```
